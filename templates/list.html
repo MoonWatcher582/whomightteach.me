@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<body>
+		<p> Here's who has taught {{ courseNum }}: </p>
+		{%- for j in range(l) -%}
+			{%- if j is divisibleby 2 -%}
+			<p> Spring 201{{ j/2|round(0,'common') + 1 }}</p>
+			{%- else -%}
+			<p> Fall 201{{ j/2|round(0, 'ceil') + 1 }}</p>
+			{%- endif -%}
+			{%- for c in semesters[j] -%}
+				{%- if c.courseNumber == courseNum -%}
+				{%- for s in c.sections -%}
+					{%- for i in s.instructors -%}
+						<p> PROFESSOR: {{ i.name }} </p>
+					{%- endfor -%}
+				{%- endfor -%}
+				{%- endif -%}
+			{%- endfor -%}
+		{%- endfor -%}
+	<body>
+<html>

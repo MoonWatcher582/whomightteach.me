@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+	<body>
+		<form action="/list">
+			<label> What class would you like to query? </label> <br />
+			<select name="subj">
+				<option value=""> Select Subject </option>
+				{% for subj in subjects %}
+				<option value= "{{ subj.code }}"> {{ subj.code }}: {{ subj.description }}</option>
+				{% endfor %}
+			</select><br />
+			
+			<label> Course number: </label>
+			<textarea cols="10" rows="1" name="courseIndex"></textarea><br />
+	
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>
