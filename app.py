@@ -25,7 +25,7 @@ def list():
 	spring = '1'
 	fall = '9'
 	sems = []
-	for i in range(1,5):
+	for i in range(2,5):
 		year = '201' + str(i)
 		spring_courses = get_courses(dept, spring + year)
 		fall_courses = get_courses(dept, fall + year)
